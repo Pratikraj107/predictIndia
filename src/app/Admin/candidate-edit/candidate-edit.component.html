@@ -1,0 +1,27 @@
+<mat-table [dataSource]="dataSource">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="candidateName">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.candidateName}} </mat-cell>
+    </ng-container>
+
+       <!-- Details Column -->
+       <ng-container matColumnDef="candidateDetails">
+        <mat-header-cell *matHeaderCellDef> Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.candidateDetails}} </mat-cell>
+    </ng-container>
+
+       <!-- Picture Column -->
+       <ng-container matColumnDef="candidatePicture">
+        <mat-header-cell *matHeaderCellDef> Pic </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.candidatePicture}} </mat-cell>
+    </ng-container>
+
+  
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+
