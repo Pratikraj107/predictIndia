@@ -35,6 +35,7 @@ import { SignupComponent } from './signup/signup.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
 import { MarketHomeComponent } from './market-home/market-home.component';
+import { PollEntryPageComponent } from './poll-details/poll-entry-page/poll-entry-page.component';
 
 
 registerLocaleData(en);
@@ -49,6 +50,7 @@ registerLocaleData(en);
     SignupComponent,
     LoginComponent,
     MarketHomeComponent,
+    PollEntryPageComponent,
     
   ],
   imports: [
