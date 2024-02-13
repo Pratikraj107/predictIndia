@@ -1,0 +1,20 @@
+<!-- <div class="sidenav">
+    <app-sidenav-admin></app-sidenav-admin>
+</div> -->
+<div >
+    <h1>Add New Poll</h1>
+    <form class="form" [formGroup]="pollForm" (ngSubmit)="OnSubmit()">
+        <input type="text" formControlName="pollName" class="form-control" placeholder="Poll name">
+       
+        <input type="text" formControlName="pollDetails"class="form-control" placeholder="Poll Details">
+
+        <input type="text" formControlName="pollPicture"class="form-control" placeholder="Pic">
+     
+        <label for="imageUpload">Choose an image:</label>
+        <input type="file" name="image" (change)="uploadImage($event)" id="imageUpload" accept="image/*">
+
+
+        <button  mat-raised-button color="primary" type="submit" (click)="addPoll(pollForm)">Add Poll</button>
+    </form>
+</div>
+

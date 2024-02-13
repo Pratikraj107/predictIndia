@@ -1,0 +1,17 @@
+.flex-container{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-wrap: wrap;
+}
+
+.example-card{
+    display: flex;
+    flex: 1 0 21%; /* explanation below */
+    margin: 5px;
+}
+.card-header{
+    align-items: center;
+    margin-left: 150px;
+}

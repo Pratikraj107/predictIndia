@@ -1,0 +1,40 @@
+<mat-table [dataSource]="dataSource">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="pollName">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.pollName}} </mat-cell>
+    </ng-container>
+
+       <!-- Details Column -->
+       <ng-container matColumnDef="pollDetails">
+        <mat-header-cell *matHeaderCellDef> Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.pollDetails}} </mat-cell>
+    </ng-container>
+
+       <!-- Picture Column -->
+       <ng-container matColumnDef="pollPicture">
+        <mat-header-cell *matHeaderCellDef> Pic </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.pollPicture}} </mat-cell>
+    </ng-container>
+
+    <!-- Button Column -->
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <button mat-raised-button (click)="onButtonClick(element)">Edit</button> 
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <button color="warn" mat-raised-button (click)="onDeleteClick(element)">Delete</button> 
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+

@@ -1,0 +1,38 @@
+.market-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+  }
+  
+  .market-header {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .market-title {
+    font-weight: bold;
+  }
+  
+  .market-details {
+    padding-top: 8px;
+  }
+  
+  .market-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  
+  .option-name {
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  .option-value {
+    font-size: 0.9em;
+    color: #666;
+  }
+  

@@ -1,0 +1,22 @@
+<div>
+    <h1>Add Candidate Details</h1>
+</div>
+<div>
+    <form class="form" [formGroup]="candidateForm" (ngSubmit)="OnSubmit()">
+        <input type="text" formControlName="candidateName" class="form-control" placeholder="Candidate name">
+       
+        <input type="text" formControlName="candidateDetails"class="form-control" placeholder="Candidate Details">
+
+        <label for="imageUpload">Choose an image:</label>
+        <input type="file" name="image" (change)="uploadImage($event)" id="imageUpload" accept="image/*">
+     
+      
+        <button  mat-raised-button color="primary" type="submit" (click)="addCandidate(candidateForm)">Add Candidate</button>
+    </form>
+</div>
+
+<div>
+    <button (click)="updateVote()">Vote</button>
+</div>
+
+<app-candidate-table></app-candidate-table>
