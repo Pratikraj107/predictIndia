@@ -1,0 +1,15 @@
+<div class="blog-post">
+<div class="blog-post-box" *ngFor="let post of post">
+    <img class="blog-post-image" src="{{post.imageUrl}}" alt="Blog Post">
+    <div class="blog-post-content">
+      <span class="blog-post-category">{{post.category}}</span>
+      <h3 class="blog-post-title">{{post.title}}</h3>
+      <p class="blog-post-excerpt">{{post.excerpt}}</p>
+      <div class="blog-post-info">
+        <span class="blog-post-author">{{post.author}}</span>
+        <!-- <span class="blog-post-date">{{post.date | date}}</span> -->
+      </div>
+    </div>
+  </div>
+</div>
+  

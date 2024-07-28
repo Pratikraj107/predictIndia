@@ -1,9 +1,64 @@
 <app-top-menu></app-top-menu>
 <div>
-<mat-tab-group animationDuration="0ms">
+<section class="hero">
+  <div >
+    <div >
+      <p class="txt1">Predict India</p>
+      <br />
+      <p class="txt2">Collaborate. Automate</p>
+      <br />
+      <p class="txt3">WeDu provides an effective and powerful</p>
+      <br />
+      <p class="txt3">way to manage your projects</p>
+      <br />
+      <button class="button">Get Started</button>
+    </div>
+    <div>
+      <img class="homeimg" src="../../assets/predictindia.png" alt="" />
+    </div>
+  </div>
+</section>
+<div>
+<!-- <mat-tab-group animationDuration="0ms">
     <mat-tab label="Politics"> <app-market-home></app-market-home> </mat-tab>
     <mat-tab label="Sports">Content 2</mat-tab>
     <mat-tab label="Entertainment">Content 3</mat-tab>
-  </mat-tab-group>
+  </mat-tab-group> -->
+  <div class="tab">
+    <button class="tab-button" [ngClass]="{'active': activeTab === 'politics'}" (click)="selectTab('politics')">Politics</button>
+    <button class="tab-button" [ngClass]="{'active': activeTab === 'sports'}" (click)="selectTab('sports')">Sports</button>
+    <button class="tab-button" [ngClass]="{'active': activeTab === 'entertainment'}" (click)="selectTab('entertainment')">Entertainment</button>
+  </div>
+  
+  <div [ngSwitch]="activeTab">
+    <app-market-home *ngSwitchCase="'politics'"   ></app-market-home>
+    <app-market-home *ngSwitchCase="'sports'"   ></app-market-home>
+    <app-market-home *ngSwitchCase="'entertainment'"   ></app-market-home>
+    <!-- <app-profile *ngSwitchCase="'sports'"></app-profile>
+    <app-messages *ngSwitchCase="'entertainment'"></app-messages> -->
+  </div>
+
 </div>
+<section class="workflow" id="workflow">
+  <div class="workflow1">
+   <p class="txt2">Get Ready to Maximize Your Productivity</p>
+   <br />
+  </div>
+  <div class="flex">
+    <div class="flex-1">
+    <app-blog-area></app-blog-area>
+  </div>
+  <div class="flex-2">
+    <ngx-twitter-timeline
+  [source]="{sourceType: 'profile', screenName: 'predict_india'}"
+  [options]="{height: '400'}" >
+</ngx-twitter-timeline>
+   </div>
+  </div>
+   <!-- Testimonials content goes here -->
+ </section>
+</div>
+<hr>
+  <app-footer></app-footer>
+
   

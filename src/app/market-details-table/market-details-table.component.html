@@ -1,0 +1,23 @@
+<!-- tabs.component.html -->
+<div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item" *ngFor="let tab of tabs; let i = index">
+        <a class="nav-link" [class.active]="i === activeTab" (click)="selectTab(i)">{{ tab.label }}</a>
+      </li>
+    </ul>
+  
+    <div *ngFor="let tab of tabs; let i = index">
+      <ng-container *ngIf="i === activeTab">
+        <div *ngFor="let item of tab.items | paginate: { itemsPerPage: 10, currentPage: currentPage[i] }">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="onPageChange($event, i)"></pagination-controls>
+      </ng-container>
+    </div>
+  </div>
+  

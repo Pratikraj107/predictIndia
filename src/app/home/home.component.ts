@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  activeTab = 'politics';
+  ngOnInit(){
+    sessionStorage.setItem("tabdetails", this.activeTab);
+  }
+  selectTab(tab: string) {
+    sessionStorage.setItem("tabdetails", tab);
+    this.activeTab = tab;
+  }
 
 }

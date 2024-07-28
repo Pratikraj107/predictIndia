@@ -8,6 +8,9 @@ import { PollTableComponent } from './Admin/poll-table/poll-table.component';
 import { CandidateFormComponent } from './Admin/candidate-form/candidate-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { MarketDetailsComponent } from './market-details/market-details.component';
+import { MarketDetailsTableComponent } from './market-details-table/market-details-table.component';
+import { PollEntryPageComponent } from './poll-details/poll-entry-page/poll-entry-page.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -20,6 +23,9 @@ const routes: Routes = [
     { path: 'poll-table', component: PollTableComponent }
   ] },
   {path:'signup', component: SignupComponent},
+  {path:'details', component: MarketDetailsComponent},
+  {path:'market-details-table', component: MarketDetailsTableComponent},
+  {path:'poll-entry', component:PollEntryPageComponent},
   {path:'login', component: LoginComponent}
 ];
 

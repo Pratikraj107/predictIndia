@@ -1,0 +1,125 @@
+<app-top-menu></app-top-menu>
+<div>
+<body>
+  <section class="boxdetails" id="about">
+    <!-- <div class="dashboard">
+      <div class="dashboard-header">
+        <h1>{{pollName}}</h1>    
+      </div>
+      <div class="flex">
+        <div class="card">
+          <div class="card-header">
+            <img
+              src="path_to_traffic_icon.jpg"
+              alt="Traffic"
+              width="24"
+              height="24"
+            />
+            <span>TOTAL VOTES</span>
+          </div>
+          <div class="card-content">35</div>
+          <div class="card-footer green">3.48% Since last month</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img
+              src="path_to_traffic_icon.jpg"
+              alt="Traffic"
+              width="24"
+              height="24"
+            />
+            <span>TRAFFIC</span>
+          </div>
+          <div class="card-content">350,897</div>
+          <div class="card-footer green">3.48% Since last month</div>
+        </div>
+      </div>
+    </div> -->
+    <div class="poll-container">
+      <h1>{{pollName}}</h1>
+      <div class="stats">
+          <div class="votes">
+              <div class="total-votes">Total Votes</div>
+              <div class="number">35</div>
+              <div class="change">3.48% Since Last Month</div>
+          </div>
+          <div class="traffic">
+              <div class="total-votes">Traffic</div>
+              <div class="number">350,897</div>
+              <div class="change">3.48% Since Last Month</div>
+          </div>
+      </div>
+      <!-- <div class="bar-chart">
+          <div class="bar" style="width: 60%;">Arvind Kejriwal</div>
+          <div class="bar" style="width: 80%;">Narendra Modi</div>
+          <div class="bar" style="width: 50%;">Rahul Gandhi</div>
+      </div> -->
+      <div class="chart1">
+        <canvas id="piechart"></canvas>
+      </div>
+  </div>
+  </section>
+
+  <section>
+    <!-- <div class="flex">
+      <div class="datatable">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>No.</th>
+            <td mat-cell *matCellDef="let element"><img class="profileimage" src={{element.candidatePicture}}></td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.candidateName }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>Change</th>
+            <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef>Votes</th>
+            <td mat-cell *matCellDef="let element">{{ element.Vote }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="vote">
+            <th mat-header-cell *matHeaderCellDef>Votes</th>
+            <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="updateVote(element.id)">Vote</button></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+  
+    </div> -->
+
+    <!-- candidate-card.component.html -->
+<div class="candidates-container">
+  <div class="candidate-card" *ngFor="let candidate of dataSource">
+    <div class="candidate-image">
+      <img class="candidate-img" [src]="candidate.candidatePicture">
+    </div>
+    <h3 class="candidate-name">{{ candidate.candidateName }}</h3>
+    <div class="candidate-votes">Votes: {{ candidate.Vote }}</div>
+    <button class="vote-button" *ngIf="!isUserVoted" (click)="updateVote(candidate.id)"  >Vote</button>
+    <button class="vote-button-disabled" *ngIf="isUserVoted" [disabled] >Voted</button>
+  </div>
+</div>
+
+  </section>
+  <section class="linechart">
+    <div class="chart2">
+        <p class="text">This is chart area</p>
+        <canvas id="linechart"></canvas>
+      </div>
+  </section>
+</body>
+</div>
+<hr>
+<app-footer></app-footer>

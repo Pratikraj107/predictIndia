@@ -1,1 +1,31 @@
-<p>poll-entry-page works!</p>
+<app-top-menu></app-top-menu>
+<div class="row">
+    <swiper-container  loop="true" slides-per-view="3" navigation ="true" >
+      <div class="market-box" *ngFor="let option of market">
+    <swiper-slide>
+      <div class="market-header"  >
+        <span class="market-title">{{ option.pollName }}</span>
+      </div>
+      <div class="flex">
+      <div class="market-details">
+        <div class="market-option">
+        
+          <img class="homeimg" [src]="option.pollPicture" alt="{{ option.pollName }}" />
+        </div>
+      </div>
+      <div class="market-details">
+        <div class="market-option">
+          <span class="option-name">{{ option.pollDetails }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="market-details">
+      <button class="button-62" (click)="marketDetails(option.id,option.pollName)">Details</button>
+    </div>
+  </swiper-slide>
+  
+  </div>
+  </swiper-container>
+
+  </div>
+  

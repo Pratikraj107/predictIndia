@@ -1,0 +1,97 @@
+.row{
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .flex{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    /* display: flex; */
+    width: 320px;
+    height: 354px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+  }
+  
+  /* CSS */
+  .button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+  
+  .button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .homeimg{
+    height: 100px;
+    width: 130px;
+  }
+  .market-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background-color: #fff;
+      height: 250px;
+      width: 350px;
+    }
+    
+    .market-header {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .market-title {
+      font-weight: bold;
+    }
+    
+    .market-details {
+      padding-top: 8px;
+    }
+    
+    .market-option {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    
+    .option-name {
+      font-size: 0.9em;
+      color: #333;
+    }
+    
+    .option-value {
+      font-size: 0.9em;
+      color: #666;
+    }
+    

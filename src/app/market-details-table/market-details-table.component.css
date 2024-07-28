@@ -1,0 +1,12 @@
+/* tabs.component.css */
+.nav-tabs {
+    margin-bottom: 20px;
+  }
+  .nav-link.active {
+    background-color: #007bff;
+    color: white;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+  

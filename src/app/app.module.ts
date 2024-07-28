@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -36,7 +37,17 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
 import { MarketHomeComponent } from './market-home/market-home.component';
 import { PollEntryPageComponent } from './poll-details/poll-entry-page/poll-entry-page.component';
-
+import { MarketDetailsComponent } from './market-details/market-details.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgxTwitterWidgetsModule } from "ngx-twitter-widgets";
+import { BlogAreaComponent } from './blog-area/blog-area.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { VoteLoginDialogComponent } from './vote-login-dialog/vote-login-dialog.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { register } from 'swiper/element/bundle';
+import { MarketDetailsTableComponent } from './market-details-table/market-details-table.component';
+// register Swiper custom elements
+register();
 
 registerLocaleData(en);
 
@@ -51,7 +62,11 @@ registerLocaleData(en);
     LoginComponent,
     MarketHomeComponent,
     PollEntryPageComponent,
-    
+    MarketDetailsComponent,
+    FooterComponent,
+    BlogAreaComponent,
+    VoteLoginDialogComponent,
+    MarketDetailsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +87,11 @@ registerLocaleData(en);
     NzSkeletonModule,
     NzButtonModule,
     ReactiveFormsModule,
+    NgxTwitterWidgetsModule,
     AdminModule,
+    MatTableModule,
+    MatDialogModule,
+    NgxPaginationModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideStorage(()=> getStorage()),
@@ -83,6 +102,7 @@ registerLocaleData(en);
   
     { provide: NZ_I18N, useValue: en_US }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA  ]
 })
 export class AppModule { }

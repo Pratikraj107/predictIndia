@@ -25,6 +25,7 @@ export class PollFormComponent implements OnInit {
      this.pollForm = new FormGroup({
         'pollName' : new FormControl(),
         'pollDetails': new FormControl(),
+        'pollCategory': new FormControl(),
         'pollPicture': new FormControl()
      });
    }
@@ -59,7 +60,7 @@ export class PollFormComponent implements OnInit {
    addPoll(pollForm:any){
     pollForm.value.pollPicture = this.downloadURl;
     const collectionInstanse = collection(this.firestore,'poll');
-
+     console.log(pollForm.value);
     addDoc(collectionInstanse,pollForm.value )
     .then(()=>{
 

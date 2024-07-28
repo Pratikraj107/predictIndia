@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class TopMenuComponent {
 
+  token:any;
+  constructor(){}
+
+  ngOnInit(){
+   this.token = sessionStorage.getItem("token");
+  }
+  logout(){
+    this.token = null;
+    sessionStorage.clear();
+  }
 }
