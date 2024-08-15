@@ -233,10 +233,13 @@ h1 {
 
 @media (max-width: 600px) {
   #piechart{
-    width: 680px !important;
+    width: 310px !important;
+  }
+  #linechart{
+    width: 349px !important;
   }
   .candidates-container{
-    width: 711px;
+    /* width: 711px; */
   }
 }
 
