@@ -46,6 +46,10 @@ import { VoteLoginDialogComponent } from './vote-login-dialog/vote-login-dialog.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { register } from 'swiper/element/bundle';
 import { MarketDetailsTableComponent } from './market-details-table/market-details-table.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
 // register Swiper custom elements
 register();
 
@@ -66,7 +70,8 @@ registerLocaleData(en);
     FooterComponent,
     BlogAreaComponent,
     VoteLoginDialogComponent,
-    MarketDetailsTableComponent
+    MarketDetailsTableComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +96,8 @@ registerLocaleData(en);
     AdminModule,
     MatTableModule,
     MatDialogModule,
+    MatListModule,
+    MatSidenavModule,
     NgxPaginationModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),

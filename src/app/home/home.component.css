@@ -107,14 +107,16 @@ header nav ul li a {
 }
 .flex{
     display: flex;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
 
 }
 .flex-1{
-    width: 850px;
-   
+    width: 850px;   
 }
 .flex-2{
     width: 450px;
+ 
 }
 .flex-3{
     width: 500px;
@@ -214,22 +216,29 @@ footer {
 }
 
 .tab{
-    margin-left: 34%;
+    /* margin-left: 34%; */
+    display: flex;
+    /* justify-content: space-around; */
+    margin-left: 320px;
+    align-items: center;
+    flex-wrap: wrap; 
 }
 
 .tab-button {
-    background-color: #e4560e; /* Orange color */
+    background-color: #e4560e; 
     border: none;
     color: white;
     padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    /* flex: 1 1 30%;  */
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 5px;
     cursor: pointer;
-    border-radius: 25px; /* Rounded corners */
-    font-weight: bold; /* Making text bold */
+    border-radius: 25px; 
+    font-weight: bold; 
+    width: 170px;
     margin-right: 25px;
   }
   
@@ -262,6 +271,14 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+    .tab{
+        /* margin-left: 34%; */
+        display: flex;
+        /* justify-content: space-around; */
+        margin-left: 100px;
+        align-items: center;
+        flex-wrap: wrap; 
+    }
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -279,5 +296,33 @@ footer {
     header nav ul li {
         margin-left: 0;
         margin-top: 5px;
+    }
+    .homeimg{
+        width: 383px;
+        height: 262px;
+        border-radius: 4px;
+        margin-top: -56px;
+    }
+    .txt2{
+        font-size: 23px;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-1{
+        width: 370px;
+        flex: 1 1 auto;
+       
+    }
+    .flex-2{
+        width: 370px;
+        flex: 1 1 auto;
+    }
+    .workflow{
+        height: 1270px;
+        text-align: center;
+        padding: 50px 10px;
+        background-color: white; 
     }
 }

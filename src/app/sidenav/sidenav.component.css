@@ -1,0 +1,156 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .navbar-toggler {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar-toggler-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+  }
+  
+  .sidenav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+    padding-top: 60px; /* Space for the navbar */
+  }
+  
+  .sidenav.active {
+    left: 0;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-item {
+    padding: 8px 16px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .navbar-login {
+    padding: 8px 16px;
+  }
+
+  
+  
+  .btn {
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .navbar-login-full {
+   margin-top: 8px;
+   display: flex;
+  }
+  
+  .navbar-nav-full {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-left: 1rem;
+    margin-top: 10px;
+  }
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-right: 25px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  .nav-link:hover {
+    color: #ddd;
+  }
+  .ham-icon{
+    height: 25px;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    background-color: #f05f57;
+    color: white;
+    height: 36px;
+    width: 100px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #e04e46;
+  }
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      display: block;
+    }
+    .full-nav{
+        display: none;
+    }
+    .navbar-nav-full{
+        display: none;
+    }
+    .navbar-login-full{
+        display: none; 
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .sidenav {
+      display: none; /* Hide sidenav on larger screens */
+    }
+  }
+  

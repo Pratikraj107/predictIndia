@@ -1,0 +1,51 @@
+
+  <!-- <nav class="navbar">
+    <div class="navbar-brand">DORSIN</div>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/about" class="nav-link">About</a></li>
+      <li class="nav-item"><a routerLink="/services" class="nav-link">Services</a></li>
+      <li class="nav-item"><a routerLink="/contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-login">
+      <a href="#" class="btn" routerLink="/login" *ngIf="!token" >Login</a>
+      <a href="#" class="btn"  *ngIf="!token">Sign up</a>
+      <a href="#" class="btn" (click)="logout()"  *ngIf="token">Logout</a>
+    </div>
+  </nav>
+  <hr style="opacity: 0.5;"/> -->
+<nav class="navbar">
+    <div class="navbar-brand">Predicts India</div>
+    <button class="navbar-toggler" (click)="toggleMenu()">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <img class="ham-icon" src="../../assets/hamburger.png" />
+    </button> 
+    <ng-container  class="full-nav">
+        <ul class="navbar-nav-full">
+            <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a routerLink="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a routerLink="/services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a routerLink="/contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="navbar-login-full">
+            <a href="#" class="btn" routerLink="/login" *ngIf="!token" >Login</a>
+            <a href="#" class="btn"  *ngIf="!token">Sign up</a>
+            <a href="#" class="btn" (click)="logout()"  *ngIf="token">Logout</a>
+          </div>
+        </ng-container>
+  </nav>
+  
+  <div class="sidenav" [ngClass]="{'active': isMenuOpen}">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="/" class="nav-link" (click)="toggleMenu()">Home</a></li>
+      <li class="nav-item"><a routerLink="/about" class="nav-link" (click)="toggleMenu()">About</a></li>
+      <li class="nav-item"><a routerLink="/services" class="nav-link" (click)="toggleMenu()">Services</a></li>
+      <li class="nav-item"><a routerLink="/contact" class="nav-link" (click)="toggleMenu()">Contact</a></li>
+    </ul>
+    <div class="navbar-login">
+      <a href="#" class="btn" routerLink="/login" *ngIf="!token" (click)="toggleMenu()">Login</a>
+      <a href="#" class="btn" *ngIf="!token" (click)="toggleMenu()">Sign up</a>
+      <a href="#" class="btn" (click)="logout(); toggleMenu()" *ngIf="token">Logout</a>
+    </div>
+  </div>
+  

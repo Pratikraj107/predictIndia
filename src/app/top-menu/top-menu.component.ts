@@ -10,6 +10,15 @@ export class TopMenuComponent {
   token:any;
   constructor(){}
 
+  isMenuOpen = false;
+
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+    
+
   ngOnInit(){
    this.token = sessionStorage.getItem("token");
   }

@@ -231,3 +231,12 @@ h1 {
   background-color: #e03e00;
 }
 
+@media (max-width: 600px) {
+  #piechart{
+    width: 680px !important;
+  }
+  .candidates-container{
+    width: 711px;
+  }
+}
+
