@@ -14,6 +14,12 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit{
 
   loginForm!: FormGroup;
+  isSignUpActive: boolean = false;
+
+  toggleSignUp(isActive: boolean): void {
+    this.isSignUpActive = isActive;
+    console.log(this.isSignUpActive);
+  }
   // auth = getAuth(this.app);
 
   constructor(private fb: FormBuilder,private auth: Auth,private router:Router ) { }
@@ -26,6 +32,7 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(){
+    console.log("Form Value", this.loginForm);
     if (this.loginForm.valid) {
       console.log("Form Value", this.loginForm.value);
       // You can process the form data here (e.g., send it to a server)

@@ -1,5 +1,6 @@
-<app-top-menu></app-top-menu>
-<div class="row">
+<!-- <app-top-menu></app-top-menu> -->
+ <app-sidenav></app-sidenav>
+<!-- <div class="row">
     <swiper-container  loop="true" slides-per-view="3" navigation ="true" >
       <div class="market-box" *ngFor="let option of market">
     <swiper-slide>
@@ -27,5 +28,17 @@
   </div>
   </swiper-container>
 
+  </div> -->
+  <div class="row">
+    <div class="card-container">
+      <div class="market-box" *ngFor="let option of market">
+        <div class="market-header">
+          <span class="market-title">{{ option.pollName }}</span>
+        </div>
+        <div class="back-img" style="background-image: url('{{ option.pollPicture }}')">
+          <button class="button-62" (click)="marketDetails(option.id, option.pollName)">Details</button>
+        </div>
+      </div>
+    </div>
   </div>
   

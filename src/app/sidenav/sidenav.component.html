@@ -29,7 +29,7 @@
           </ul>
           <div class="navbar-login-full">
             <a href="#" class="btn" routerLink="/login" *ngIf="!token" >Login</a>
-            <a href="#" class="btn"  *ngIf="!token">Sign up</a>
+            <a href="#" class="btn" routerLink="/signup" *ngIf="!token">Sign up</a>
             <a href="#" class="btn" (click)="logout()"  *ngIf="token">Logout</a>
           </div>
         </ng-container>
@@ -44,7 +44,7 @@
     </ul>
     <div class="navbar-login">
       <a href="#" class="btn" routerLink="/login" *ngIf="!token" (click)="toggleMenu()">Login</a>
-      <a href="#" class="btn" *ngIf="!token" (click)="toggleMenu()">Sign up</a>
+      <a href="#" class="btn" routerLink="/signup" *ngIf="!token" (click)="toggleMenu()">Sign up</a>
       <a href="#" class="btn" (click)="logout(); toggleMenu()" *ngIf="token">Logout</a>
     </div>
   </div>
