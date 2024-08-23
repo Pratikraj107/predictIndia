@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { getAuth, signInWithEmailAndPassword, Auth } from '@angular/fire/auth';
+import { getAuth, signInWithEmailAndPassword, Auth ,signInWithPopup} from '@angular/fire/auth';
 import { initializeApp } from "firebase/app";
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit{
 
   loginForm!: FormGroup;
   isSignUpActive: boolean = false;
+  provider = new GoogleAuthProvider();
 
   toggleSignUp(isActive: boolean): void {
     this.isSignUpActive = isActive;
@@ -31,6 +33,20 @@ export class LoginComponent implements OnInit{
     });
   }
 
+  onGoogleSign(){
+
+  signInWithPopup(this.auth, this.provider)
+  .then((result)=>{
+    let credential = GoogleAuthProvider.credentialFromResult(result);
+    let token = credential?.accessToken;
+    // The signed-in user info.
+    const user:any = result.user;
+    sessionStorage.setItem("token",user.accessToken);
+    sessionStorage.setItem("userid",user.uid);
+     this.router.navigate(['']);
+    console.log("user",user.uid);
+  })
+  }
   onSubmit(){
     console.log("Form Value", this.loginForm);
     if (this.loginForm.valid) {

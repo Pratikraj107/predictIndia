@@ -37,6 +37,7 @@ export class PollFormComponent implements OnInit {
    uploadImage(event: Event){
     
     const fileInput = event.target as HTMLInputElement;
+    console.log(fileInput);
     if (fileInput.files && fileInput.files[0]) {
       const file = fileInput.files[0];
       const path = URL.createObjectURL(file); // Create an object URL for the file

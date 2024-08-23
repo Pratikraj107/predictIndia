@@ -1,4 +1,4 @@
-<app-sidenav></app-sidenav>
+
      <div class="form-container sign-up-container">
        <form action="#">
          <h1>Create Account</h1>
@@ -14,14 +14,18 @@
          <button>Sign Up</button>
        </form>
      </div>
+   
      <div class="form-container sign-in-container">
+      <div class="google-con">
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <button class="google-sign-in-button" (click)="onGoogleSign()" >
+          <img src="../../assets/google.png" alt="Google Logo">
+        </button>
+      </div>
+    </div>
        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-         <h1>Sign in</h1>
-         <div class="social-container">
-           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-           <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-         </div>
+    
          <span>or use your account</span>
          <input  id="email" type="email" formControlName="email" placeholder="Enter email" />
          <input  id="password" type="password" formControlName="password" placeholder="Enter password" />

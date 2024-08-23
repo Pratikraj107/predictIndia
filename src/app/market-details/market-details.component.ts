@@ -22,6 +22,7 @@ export class MarketDetailsComponent {
   pollName: any;
   token:any;
   userid:any;
+  totalVotes: number = 0;
   isUserVoted:boolean = false;
   //  piechart:any = document.getElementById('piechart');
 
@@ -63,7 +64,11 @@ export class MarketDetailsComponent {
       this.monthvotes =  this.dataSource.map((item:any)=>{
         return item.VotePerMonth;
       });
-      console.log(this.monthvotes);
+  
+     this.numberofvotes.map((item:any)=>{
+      this.totalVotes = item +this.totalVotes
+      }  )
+      console.log("Votes",this.totalVotes);
       for(let i in this.monthvotes){
         this.monthlyvotes = Object.keys(this.monthvotes)
       }

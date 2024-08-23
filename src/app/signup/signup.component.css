@@ -126,11 +126,16 @@ form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 	flex-direction: column;
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+}
+
+.google-con{
+	margin-left: 290px;
+	margin-top: 100px;
 }
 
 input {
@@ -169,6 +174,27 @@ input {
 .container.right-panel-active .sign-in-container {
 	transform: translateX(100%);
 }
+
+.google-sign-in-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+	border: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+  }
+  
+  .google-sign-in-button img {
+	width: 24px;
+	height: 24px;
+  }
+  
 
 .sign-up-container {
 	left: 0;
@@ -310,5 +336,12 @@ footer a {
     .sign-in-container{
         width: 100%;
     }
+	.google-con{
+		margin-left: 150px;
+		margin-top: 130px;
+	}
+	.google-sign-in-button{
+		margin-left: 10px;
+	}
 }
 

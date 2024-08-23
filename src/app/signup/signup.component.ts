@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, Auth } from '@angular/fire/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, Auth ,signInWithPopup } from '@angular/fire/auth';
 import { initializeApp } from "firebase/app";
 import { environment } from 'src/environments/environment';
+import { GoogleAuthProvider } from "firebase/auth";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,9 +15,10 @@ export class SignupComponent {
 
   app = initializeApp(environment.firebase);
   signupForm!: FormGroup;
+  provider = new GoogleAuthProvider();
   // auth = getAuth(this.app);
 
-  constructor(private fb: FormBuilder,private auth: Auth ) { }
+  constructor(private fb: FormBuilder,private auth: Auth ,private router:Router) { }
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
@@ -23,6 +26,20 @@ export class SignupComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+  }
+
+  onGoogleSignup(){
+    signInWithPopup(this.auth, this.provider)
+    .then((result)=>{
+      let credential = GoogleAuthProvider.credentialFromResult(result);
+      let token = credential?.accessToken;
+      // The signed-in user info.
+      const user:any = result.user;
+      sessionStorage.setItem("token",user.accessToken);
+      sessionStorage.setItem("userid",user.uid);
+      this.router.navigate(['']);
+      console.log("user",result);
+    })
   }
 
   onSubmit(): void {

@@ -36,13 +36,16 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-      <h1>Create your Account</h1>
+    <div class="google-con">
+      <h1>Create your account</h1>
       <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        <button class="google-sign-in-button" (click)="onGoogleSignup()" >
+          <img src="../../assets/google.png" alt="Google Logo">
+        </button>
       </div>
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+   
       <span>or use your account</span>
       <input id="username" type="text" formControlName="username" placeholder="Enter your Name">
       <input  id="email" type="email" formControlName="email" placeholder="Enter Email"/>
