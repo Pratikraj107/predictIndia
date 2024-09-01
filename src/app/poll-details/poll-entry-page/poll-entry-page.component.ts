@@ -26,9 +26,9 @@ export class PollEntryPageComponent {
           this.market =  this.market.filter((item:any)=>{
             return item.pollCategory.toLowerCase() == this.tab;
           });
-          if(this.market.length >3){
-            this.market= this.market.slice(2);
-          }
+          // if(this.market.length >3){
+          //   this.market= this.market.slice(2);
+          // }
         
           console.log(this.market);
           console.log(this.market[0].id);
