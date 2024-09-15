@@ -207,7 +207,7 @@ RenderChart(){
       // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       labels: this.candidateName,
       datasets: [{
-        label: '# of Votes',
+        label: 'Total Votes',
         data: this.numberofvotes,
         backgroundColor:[
          'rgb(255, 153, 51)',

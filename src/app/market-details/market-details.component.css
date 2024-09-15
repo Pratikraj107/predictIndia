@@ -167,7 +167,9 @@ h1 {
 /* candidate-card.component.css */
 .candidates-container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -227,10 +229,46 @@ h1 {
 }
 
 
-.vote-button:hover {
-  background-color: #e03e00;
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .candidates-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .candidate-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .candidate-name {
+    font-size: 16px;
+  }
+
+  .vote-button, .vote-button-disabled {
+    width: 100%;
+  }
 }
 
+@media (max-width: 480px) {
+  .candidate-card {
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .candidate-name {
+    font-size: 14px;
+  }
+
+  .vote-button, .vote-button-disabled {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
 @media (max-width: 600px) {
   #piechart{
     width: 310px !important;
